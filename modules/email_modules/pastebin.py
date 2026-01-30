@@ -1,31 +1,61 @@
 """
-original code => https://github.com/KanekiWeb/Email-Osint/blob/main/modules/PastebinDump.py
+Robust Pastebin email detection
+Community-maintained version
 """
-from ScrapeSearchEngine.SearchEngine import Google
+
+import re
 from lib.requests import Requests
+
+DUCKDUCKGO = "https://duckduckgo.com/html/?q={query}"
+
+# Pastes conocidos / recientes (se puede ampliar)
+KNOWN_PASTES = [
+    "d2UfiSPy"
+]
+
+
+async def fetch_raw(paste_id: str) -> str | None:
+    url = f"https://pastebin.com/raw/{paste_id}"
+    try:
+        r = await Requests(url).get()
+        if r.status_code == 200:
+            return r.text
+    except Exception:
+        pass
+    return None
 
 
 async def pastebin(email: str) -> list:
-    search = ("site:pastebin.com \"{}\"".format(email))
+    found = []
+
+    # ---------
+    # 1️⃣ Modo directo (pastes conocidos)
+    # ---------
+    for pid in KNOWN_PASTES:
+        data = await fetch_raw(pid)
+        if data and email.lower() in data.lower():
+            found.append(f"https://pastebin.com/raw/{pid}")
+
+    # ---------
+    # 2️⃣ Modo pasivo (DuckDuckGo)
+    # ---------
+    query = f'site:pastebin.com "{email}"'
+    search_url = DUCKDUCKGO.format(query=query.replace(" ", "+"))
+
     try:
-        googleText, googleLink = Google(
-            search=search, userAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+        r = await Requests(search_url).get()
+        html = r.text
 
-        result_links = []
+        links = set(
+            re.findall(r'https://pastebin\.com/([A-Za-z0-9]+)', html)
+        )
 
-        for i in googleLink:
-            try:
-                link = str(i).replace("https://pastebin.com/",
-                                      "https://pastebin.com/raw/")
-                data = await Requests(link).get()
+        for pid in links:
+            raw = await fetch_raw(pid)
+            if raw and email.lower() in raw.lower():
+                found.append(f"https://pastebin.com/raw/{pid}")
 
-                if email.lower() in data.text.lower() or email in data.text or email.upper() in data.text.upper():
-                    result_links.append(link)
+    except Exception:
+        pass
 
-            except:
-                return ()
-
-        return result_links
-
-    except:
-        return ()
+    return list(set(found))

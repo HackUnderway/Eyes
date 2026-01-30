@@ -1,5 +1,6 @@
 from .text import *
 
+# Banner limpio, para uso normal
 banner = f"""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣶⣶⣶⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⠀⠀⠀⠀⠀⠀
@@ -9,26 +10,17 @@ banner = f"""
 ⠈⠻⣿⣿⣦⣄⠀⠸⣿⣿⣆⠀⠀⠀{RED}⠉⠉{WHITE}⠀⠀⠀⣸⣿⣿⠃⢀⣤⣾⣿⣿⠟⠁
 ⠀⠀⠈⠻⣿⣿⣿⣶⣿⣿⣿⣦⣄⠀⠀⠀⢀⣠⣾⣿⣿⣿⣾⣿⣿⡿⠋⠁⠀⠀
 ⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠛⠉⠀⠀{PURPLE}👁️ {italic(text="Eyes v1")}{WHITE}
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠛⠉⠀⠀{PURPLE}👁️ {italic(text="Eyes v2")}{WHITE}
 
            {italic(text="BY norze")}
 {PINK}Tool made with 💗 (N0rz3 on GitHub 🐙){WHITE}
 
-𝕩  X.com: @norze15
-☕ Donations: https://www.buymeacoffee.com/norze
-
-
-usage: eyes.py [-h] [-m] [email]
-
-positional arguments:
-  email          search information on the target email with modules, services...
-
-options:
-  -h, --help     show this help message and exit
-  -m, --modules  gives you all the email modules used by Eyes
+Maintained & updated by:
+👤 Jey Zeta
 """
 
-banner2 = f"""
+# Banner completo, para help (-h)
+banner_help = f"""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣶⣶⣶⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⣠⣶⣿⣿⡿⣿⣿⣿⡿⠋⠉⠀⠀⠉⠙⢿⣿⣿⡿⣿⣿⣷⣦⡀⠀⠀⠀
@@ -37,8 +29,14 @@ banner2 = f"""
 ⠈⠻⣿⣿⣦⣄⠀⠸⣿⣿⣆⠀⠀⠀{RED}⠉⠉{WHITE}⠀⠀⠀⣸⣿⣿⠃⢀⣤⣾⣿⣿⠟⠁
 ⠀⠀⠈⠻⣿⣿⣿⣶⣿⣿⣿⣦⣄⠀⠀⠀⢀⣠⣾⣿⣿⣿⣾⣿⣿⡿⠋⠁⠀⠀
 ⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠛⠉⠀⠀{PURPLE}👁️ {italic(text="Eyes v1")}{WHITE}
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠛⠉⠀⠀{PURPLE}👁️ {italic(text="Eyes v2")}{WHITE}
 
            {italic(text="BY norze")}
 {PINK}Tool made with 💗 (N0rz3 on GitHub 🐙){WHITE}
+
+𝕩  X.com: @norze15
+☕ Donations: https://www.buymeacoffee.com/norze
+
+Maintained & updated by:
+👤 Jey Zeta
 """

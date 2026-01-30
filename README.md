@@ -5,9 +5,26 @@
 [![python version](https://img.shields.io/badge/Python-3.10%2B-brightgreen)](https://www.python.org/downloads/)
 [![license](https://img.shields.io/badge/License-GNU-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.fr.html)
 
+---
+
+### 🔧 Maintenance Notice
+
+**Original project:** norze  
+**Maintained & updated by:** **Jey Zeta**
+
+This fork includes:
+- Fixes for broken modules (Xposedornot, HudsonRock, etc.)
+- Updated endpoints
+- Improved async handling
+- Updated banner & versioning
+
+---
+
 # **🕵️ Eyes is an OSINT tool to get existing accounts from an email**
 
-![](assets/capture.png)
+![](assets/help.png)
+
+![](assets/modules.png)
 
 ## 😇 About
 
@@ -38,6 +55,8 @@ Name | Key |
 | [Protonmail](https://proton.me/mail) | ❌ 🔑 |
 | [X (Twitter)](https://x.com) | ❌ 🔑 |
 | [Instagram](https://instagram.com) | ❌ 🔑 |
+| [HudsonRock)](https://hudsonrock.com) | ❌ 🔑 |
+| [Xposedornot](https://xposedornot.com) | ❌ 🔑 |
 
 ### 📸🙋‍♂️ Facial recognition
 
@@ -53,8 +72,8 @@ The facial recognition module is called: Venom
 - [New terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=us) (to display emojis) # only for windows
 
 ```
-$ git clone https://github.com/N0rz3/Eyes.git
-$ cd ./Eyes
+$ git clone https://github.com/HackUnderway/Eyes
+$ cd Eyes
 $ pip3 install -r requirements.txt
 ```
 
@@ -77,10 +96,13 @@ options:
 
 ![](assets/demo.gif)
 
+![](assets/Eyes_Demo.png)
+
 ## 🌞 More
 
 If you want to discover other tools of the same kind there are :
 
+- [Hack Underway](https://hackunderway.io/)
 - [Osint Industries](https://osint.industries/)
 - [Holehe](https://github.com/megadose/holehe)
 - [Buster](https://github.com/sham00n/buster)

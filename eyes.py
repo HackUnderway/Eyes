@@ -1,12 +1,13 @@
-#!/usr/bin/env python3
+import sys
+import platform
+import os
 
-__author__ = "N0rz3"
+sys.dont_write_bytecode = True
 
-if __name__ == "__main__":
-    import os
-    os.system('title Eyes')
-    import sys
-    sys.dont_write_bytecode = True
-    import asyncio
-    from lib.cli import parser
-    asyncio.run(parser())
+if platform.system() == "Windows":
+    os.system("title Eyes")
+
+import asyncio
+from lib.cli import parser
+
+asyncio.run(parser())
