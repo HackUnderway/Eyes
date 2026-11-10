@@ -6,3 +6,4 @@ requests
 imagehash
 scrape-search-engine
 bs4
+aiohttp
